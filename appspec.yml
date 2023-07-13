@@ -3,3 +3,9 @@ os: linux
 files:
   - source: /index.html
     destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - runas: root
+      content: |
+        #!/bin/bash
+        sudo rm -f /var/www/html/index.html
