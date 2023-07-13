@@ -3,26 +3,4 @@ os: linux
 files:
   - source: /index.html
     destination: /var/www/html/
-hooks:
-  BeforeInstall:
-    - location: dummy
-      runas: root
-      content: |
-        #!/bin/bash
-        sudo apt-get update
-        sudo apt-get install -y apache2
-  ApplicationStart:
-    - location: dummy
-      runas: root
-      content: |
-        #!/bin/bash
-        sudo systemctl start apache2
-  ApplicationStop:
-    - location: dummy
-      runas: root
-      content: |
-        #!/bin/bash
-        isExistApp=$(pgrep httpd)
-        if [[ -n $isExistApp ]]; then
-            sudo service apache2 stop
-        fi
+
