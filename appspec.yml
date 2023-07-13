@@ -11,4 +11,3 @@ hooks:
         sudo rm -f /var/www/html/index.html
         sudo mv /var/www/html/manish/index.html /var/www/html/
         sudo rm -rf /var/www/html/manish
-
