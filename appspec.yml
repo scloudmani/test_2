@@ -7,4 +7,3 @@ hooks:
   BeforeInstall:
     - location: dummy/dummy.sh
       runas: root
-
