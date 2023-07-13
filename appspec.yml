@@ -2,12 +2,4 @@ version: 0.0
 os: linux
 files:
   - source: /index.html
-    destination: /var/www/html/manish/index.html
-hooks:
-  AfterInstall:
-      runas: root
-      content: |
-        #!/bin/bash
-        sudo rm -f /var/www/html/index.html
-        sudo mv /var/www/html/manish/index.html /var/www/html/
-        sudo rm -rf /var/www/html/manish
+    destination: /var/www/html/
