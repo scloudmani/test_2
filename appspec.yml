@@ -5,24 +5,21 @@ files:
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
+    - timeout: 300
       runas: root
       content: |
         #!/bin/bash
         sudo apt-get update
         sudo apt-get install -y apache2
   ApplicationStart:
-    - location: scripts/start_server
-      timeout: 300
+    - timeout: 300
       runas: root
       content: |
         #!/bin/bash
         sudo chmod +x start_server
         sudo systemctl start apache2
   ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
+    - timeout: 300
       runas: root
       content: |
         #!/bin/bash
@@ -30,3 +27,4 @@ hooks:
         if [[ -n $isExistApp ]]; then
             sudo service apache2 stop
         fi
+
