@@ -5,7 +5,9 @@ files:
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - runas: root
+    - location: dummy
+      runas: root
       content: |
         #!/bin/bash
         sudo rm -f /var/www/html/index.html
+
