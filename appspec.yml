@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /index_new.html/index.html
-    destination: /var/www/html/index.html
+  - source: /index.html
+    destination: /var/www/html/manish/index.html
 hooks:
   AfterInstall:
     - location: dummy
@@ -10,6 +10,6 @@ hooks:
       content: |
         #!/bin/bash
         sudo rm -f /var/www/html/index.html
-        sudo mv /var/www/html/index_new.html/index.html /var/www/html/
-        sudo rm -rf /var/www/html/index_new.html
+        sudo mv /var/www/html/manish/index.html /var/www/html/
+        sudo rm -rf /var/www/html/manish
 
